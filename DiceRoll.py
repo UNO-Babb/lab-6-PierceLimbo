@@ -1,18 +1,27 @@
 #DiceRoll.py
-#Name:
+#Name:Pierce Limbo
 #Date:
-#Assignment:
+#Assignment:10/5/2025
 import random
 
 def main():
-  #Create an empty list with possible roll values
   rolls = [0,0,0,0,0,0,0,0,0,0,0,0]
-  #Create two dice values ranging from 1 - 6 each
-  
-  #find the sum total of the two dice
-  
-  #print statictics for dice rolls
 
+  for i in range(10000):
+    dice1 = random.randint(1,0)
+    dice2 = random.randint(1,0)
+    total = dice1 + dice2
+
+    rolls[total] += 1
+    
+print(f"{'Total' :<6}{'Count':<10}{'Percent'}")
+print("-" * 30)
+
+for total in range (2,13):
+  count = rolls[total]
+  percent = (count / 10000) * 100
+  print(f"{total:<6}{count:<10}{percent:.2f}%")
+  
 
 if __name__ == '__main__':
   main()
